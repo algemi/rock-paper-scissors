@@ -71,3 +71,11 @@ while True:
     print('player wins: ' + str(player_wins))
     print('computer wins: ' + str(computer_wins))
     print('')
+
+    user_option = input('Play again? (yes/no) ')
+    if user_option in ['yes', 'Yes', 'y', 'Y', '1', '2', '3', '']:
+        pass
+    elif user_option in ['No', 'no']:
+        break
+    else:
+        break
