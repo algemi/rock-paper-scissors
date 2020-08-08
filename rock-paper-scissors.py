@@ -1,19 +1,22 @@
 import random
 
+computer_wins = 0
+player_wins = 0
+
 print('')
 print('Welcome to the game rock-paper-scissors.')
 print('If you want to play press:')
-print('1 for rock')
-print('2 for paper')
-print('3 for scissors')
+print('1 for Rock')
+print('2 for Paper')
+print('3 for Scissors')
 
 def User_Option():
-    user_option = input('Choose your number (1,2,3): ')
-    if user_option in ['1']:
+    user_option = input('Choose option (1,2,3): ')
+    if user_option in ['1', 'Rock', 'rock', 'R', 'r']:
         user_option = '1'
-    elif user_option in ['2']:
+    elif user_option in ['2', 'Paper', 'paper', 'P', 'p']:
         user_option = '2'
-    elif user_option in ['3']:
+    elif user_option in ['3', 'Scissors', 'scissor', 'S', 's']:
         user_option = '3'
     else:
         print('Invalid. Try again.')
@@ -39,29 +42,32 @@ while True:
             print('player: rock, computer: rock. You tied.')
         elif computer_option == '2':
             print('player: rock, computer: paper. You lose.')
+            computer_wins += 1
         elif computer_option == '3':
             print('player: rock, computer: scissors. You win.')
-
+            player_wins += 1
 
     elif user_option == '2':
         if computer_option == '1':
             print('player: paper, computer: rock. You win.')
+            player_wins += 1
         elif computer_option == '2':
             print('player: paper, computer: paper. You tied.')
         elif computer_option == '3':
             print('player: paper, computer: scissors. You lose.')
-
+            computer_wins += 1
 
     elif user_option == '3':
         if computer_option == '1':
             print('player: scissors, computer: rock. You lose.')
+            computer_wins += 1
         elif computer_option == '2':
             print('player: scissors, computer: paper. You win.')
+            player_wins += 1
         elif computer_option == '3':
             print('player: scissors, computer: scissors. You tied.')
 
-#user_choice = input('Play again? [y/n]')
-#if user_choice in ['y']:
-#    pass
-#elif user_choice in ['n']:
-#    exit()
+    print('')
+    print('player wins: ' + str(player_wins))
+    print('computer wins: ' + str(computer_wins))
+    print('')
